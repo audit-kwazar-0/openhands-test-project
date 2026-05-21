@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Always use project venv (system python3 has no PyYAML/deps).
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+VENV_PY="$ROOT/.venv/bin/python"
+if [[ ! -x "$VENV_PY" ]]; then
+  echo "Missing .venv — run: bash scripts/setup-venv.sh" >&2
+  exit 1
+fi
+exec "$VENV_PY" "$ROOT/labctl.py" "$@"

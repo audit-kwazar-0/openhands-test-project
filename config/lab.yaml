@@ -1,0 +1,8 @@
+db_path: data/lab_sentinel.db
+services:
+  - name: qdrant
+    url: http://127.0.0.1:6333/healthz
+    interval_sec: 30
+  - name: devops-rag
+    url: http://127.0.0.1:8080/health
+    interval_sec: 60
