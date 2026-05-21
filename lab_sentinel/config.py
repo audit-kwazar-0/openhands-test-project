@@ -1,0 +1,1 @@
+from pydantic import BaseModel\nfrom typing import List\nclass ServiceConfig(BaseModel):\n    name: str\n    url: str\n    interval_sec: int\nclass Config(BaseModel):\n    services: List[ServiceConfig]
